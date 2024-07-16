@@ -12,6 +12,7 @@ const App = () => {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     try {
+      setLoading(true)
       axios.get(import.meta.env.VITE_TOKEN_VERIFY, { withCredentials: true })
         .then(resp => resp.status)
         .then(statusCode => {

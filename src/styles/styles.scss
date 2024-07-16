@@ -236,6 +236,63 @@ nav {
     margin-bottom: 0;
   }
 }
+//Home usertable
+.usertable {
+  justify-content: center;
+  display: flex;
+  margin-top: 50px;
+  padding: 50px;
+  table,
+  td,
+  th,
+  tr {
+    border: 1px solid;
+    border-collapse: collapse;
+  }
+  table {
+    // width: 500px;
+    font-size: 20px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    -webkit-box-shadow: -4px 3px 13px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -4px 3px 13px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: -4px 3px 13px 0px rgba(0, 0, 0, 0.75);
+  }
+  td,
+  th {
+    padding: 10px 50px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .usertable {
+    justify-content: center;
+    display: flex;
+    // width: 200px;
+    margin-top: 50px;
+    padding: 50px;
+    table,
+    td,
+    th,
+    tr {
+      border: 1px solid;
+      border-collapse: collapse;
+    }
+    table {
+      min-width: 200px;
+      font-size: 15px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      -webkit-box-shadow: -4px 3px 13px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: -4px 3px 13px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: -4px 3px 13px 0px rgba(0, 0, 0, 0.75);
+    }
+    td,
+    th {
+      padding: 5px 10px;
+    }
+  }
+}
+
 @media screen and (max-width: 500px) {
   .sigup-form-container {
     width: 350px;

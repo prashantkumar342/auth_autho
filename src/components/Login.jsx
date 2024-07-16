@@ -19,12 +19,12 @@ const Login = () => {
   const login = (event) => {
     event.preventDefault()
     fetch(import.meta.env.VITE_USER_LOGIN_API_URL, {
-      method: 'POST',
+      method: 'POST', credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(userCred),
-      credentials: 'include'
+
     })
       .then(res => res.status)
       .then(data => {

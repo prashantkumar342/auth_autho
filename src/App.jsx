@@ -1,11 +1,10 @@
 import { Routes, Route, Navigate } from "react-router-dom"
-import { useState, createContext, useEffect, Suspense, lazy } from "react"
-const Navbar = lazy(() => import('./components/Navbar'));
-const Home = lazy(() => import('./components/Home'));
-const Signup = lazy(() => import('./components/Signup'));
-const Login = lazy(() => import('./components/Login'));
-const LoadingFallback = lazy(() => import('./components/LoadingFallback'))
-
+import { useState, createContext, useEffect } from "react"
+import LoadingFallback from './components/LoadingFallback'
+import Home from "./components/Home"
+import Signup from './components/Signup'
+import Login from './components/Login'
+import Navbar from './components/Navbar'
 import axios from "axios"
 export const isAuth = createContext()
 const App = () => {
@@ -42,14 +41,12 @@ const App = () => {
                 <Navbar />
               </header>
               <main>
-                <Suspense fallback={<LoadingFallback />}>
-                  <Routes>
-                    <Route path='/' element={(isLoggedIn) ? <Home /> : <Navigate to='/user/login' />} />
-                    <Route path='/user/login' element={(isLoggedIn) ? <Navigate to='/' /> : <Login />} />
-                    <Route path='/user/signup' element={(isLoggedIn) ? <Navigate to='/' /> : <Signup />} />
-                    <Route path='*' element={(isLoggedIn) ? <Navigate to='/' /> : <Navigate to='/user/login' />} />
-                  </Routes>
-                </Suspense>
+                <Routes>
+                  <Route path='/' element={(isLoggedIn) ? <Home /> : <Navigate to='/user/login' />} />
+                  <Route path='/user/login' element={(isLoggedIn) ? <Navigate to='/' /> : <Login />} />
+                  <Route path='/user/signup' element={(isLoggedIn) ? <Navigate to='/' /> : <Signup />} />
+                  <Route path='*' element={(isLoggedIn) ? <Navigate to='/' /> : <Navigate to='/user/login' />} />
+                </Routes>
               </main>
             </>)
         }

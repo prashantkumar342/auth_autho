@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 import Home from "./components/Home"
 import Signup from './components/Signup'
 import Login from './components/Login'
+
 import { useState, createContext, useEffect } from "react"
 import axios from "axios"
 export const isAuth = createContext()
@@ -25,6 +26,7 @@ const App = () => {
       <>
         <header>
           <Navbar />
+          {/* <LoadingFallback /> */}
         </header>
         <main>
           <Routes>
